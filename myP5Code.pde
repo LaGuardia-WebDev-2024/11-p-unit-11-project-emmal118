@@ -10,6 +10,9 @@ setup = function() {
      text("❆", snowX[i], snowY[i]);
    }
    
+   
+   drawFish(300, 200);
+   
    fill(255,255,255);
    rect(-10, 300, 610, 150);
 
@@ -31,13 +34,16 @@ setup = function() {
 var favFruit = ["orange 🍊", "strawberry 🍓", "apple 🍎", "cherry 🍒"];
 fill(255,255,255);
 textSize(40);
-
+var favFruit2 = ["banana🍌 ", "pear 🍐", "pinapple 🍍", "mango 🍈"];
+fill(255,255,255);
+textSize(40);
 var fruitNum = 0;
 while(fruitNum < favFruit.length){
  text(favFruit[fruitNum], 230, 50 + fruitNum*70);
  fruitNum ++;
 }
-};
+
+
 
 var i = 0;
 var fruitY = 30;
@@ -46,15 +52,18 @@ while(i < myFruit.length) {
   fruitY+=40;
   i++;
 }
+};
 
 draw = function(){
-backround(0, 0, 0);
+//backround(0, 0, 0);
 
-if(mousePressed){
-  xPositions.push(mouseX);
-  yPositions.push(mouseY);
-}
- 
-drawStars();
+
 
 }
+
+//🟡drawFish Function - will run when called
+var drawFish = function(fishX, fishY, fishColor){
+  textSize(80);
+  fill(fishColor);
+  text("𓆝", fishX, fishY);
+};
